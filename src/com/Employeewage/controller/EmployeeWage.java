@@ -2,43 +2,46 @@ package com.Employeewage.controller;
 import com.Employeewage.model.Employee;
 
 interface Icontroller{
-       	void EmployeeAttendance(String a);
-	//int dailyWage(int b);
+       	boolean EmployeeAttendance();
+	void isPartTime(String a);
 }
 class EmployeeWage implements Icontroller{
 
-	public void EmployeeAttendance(String a){
+	public boolean EmployeeAttendance(){
 		int isPresent =1;
 
-		double empCheck = Math.floor(Math.random()*10)%2;
-		if (empCheck == isPresent){
-			int dailywage=8*20;
-			System.out.println(a+" Employee is present daily wage ="+dailywage);
-			
+		double empcheck = Math.floor(Math.random()*10)%2;
+		if (empcheck == isPresent){
+			return true;
 		}
 		else{
-			System.out.println(a+" Employee is absent");
-		
+			return false;
 		}
-		
 	}
-	/*public int dailyWage(int b){
-		if(EmployeeAttendance(String a)==1){
-			int wage=8*20;
-		}
-		else{
-			System.out.println("employee is absent");
-		}
-	}*/
+	 public void isPartTime(String a){
+                int isPartTime =1;
+
+                double empCheck = Math.floor(Math.random()*10)%2;
+                if (empCheck == isPartTime){
+                        int dailywage=4*20;
+                        System.out.println(a+" Employee is Part time daily wage="+dailywage);
+                }
+                else{
+			int dailywage=8*20;
+                        System.out.println(a+" full time daily wage="+dailywage);
+                }
+        }
 	public static void main(String[] args){
 		System.out.println("welcome to employee Wage calculation program");
 		Employee emp = new Employee();
 		emp.setName("john");
 		Icontroller ic = new EmployeeWage();
-       		ic.EmployeeAttendance(emp.getName());
-		//ic.dailyWage(EmployeeAttendance(emp.getName()));
-		//System.out.println("daily wage="+wage);
+		boolean a=ic.EmployeeAttendance();
+		if(a==true)
+			ic.isPartTime(emp.getName());
+		else
+			System.out.println("employee is absent");
 
-		//System.out.println(emp.getName());
 	}
+
 }
