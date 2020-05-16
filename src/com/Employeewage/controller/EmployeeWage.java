@@ -32,19 +32,16 @@ public class EmployeeWage implements Icontroller{
 		return hrs;
         }
         public int computeEmpWage(){
-		//int hrs=0;
 		int totalHrs=0;
 		int totalDays=0;
 		while(totalHrs<=100 && totalDays<=20){
-			//totalDays++;
 			if(EmployeeAttendance()==true){
 				totalDays++;
 			       	System.out.println("Day#: " +totalDays);
 				totalHrs+=isPartTime();
-				
 			}
 		}
-		int salary=totalHrs*20;
-		return salary;
-     	}   
+		int total= totalHrs*20;
+		return total;
+    	}
 }

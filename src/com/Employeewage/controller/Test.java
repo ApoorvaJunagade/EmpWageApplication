@@ -8,18 +8,7 @@ public class Test{
                 System.out.println("welcome to employee Wage calculation program");
                 Employee emp = new Employee();
                 emp.setName("john");
-                /*int hrs=0;
-                int i=0;
-                while( i<20 && hrs<100){
-                        Icontroller ic = new EmployeeWage();
-                        boolean a=ic.EmployeeAttendance();
-                        if(a==true){
-                                  i=i+1;
-                                  hrs=hrs+ic.isPartTime(emp.getName());
-                        }
-		}System.out.println("total salary="+i*hrs);*/
 		Icontroller ic = new EmployeeWage();
-		//ic.isPartTime(emp.getName());
 		int total=ic.computeEmpWage();
 		System.out.println("total salary="+total);
 	}

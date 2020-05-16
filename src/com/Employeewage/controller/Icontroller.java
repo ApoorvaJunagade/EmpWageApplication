@@ -5,4 +5,5 @@ public interface Icontroller{
         boolean EmployeeAttendance();
         int isPartTime();
 	int computeEmpWage();	
+
 }
