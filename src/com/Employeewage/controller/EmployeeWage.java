@@ -14,7 +14,7 @@ public class EmployeeWage implements Icontroller{
 			return false;
 		}
 	}
-	 public int isPartTime(String a){
+	 public int isPartTime(){
                 int isPartTime =1;
 		int dailywage;
 		int hrs;
@@ -22,14 +22,31 @@ public class EmployeeWage implements Icontroller{
                 if (empCheck == isPartTime){
 			hrs=4;
                         dailywage=hrs*20;
-                        System.out.println(a+" Employee is Part time daily wage="+dailywage);
+                        System.out.println(" Employee is Part time, working hrs="+hrs+" daily wage="+dailywage);
                 }
-                else{   hrs=8;
+                else{	
+			hrs=8;
 			dailywage=hrs*20;
-                        System.out.println(a+" employee is full time daily wage="+dailywage);
+                        System.out.println(" employee is full time, working hrs="+hrs+" daily wage="+dailywage);
                 }
 		return hrs;
         }
-	
-
+        public int computeEmpWage(){
+		int totalHrs=0;
+		int totalDays=0;
+		while(totalHrs<=100 && totalDays<=20){
+			System.out.println("Day#: " +totalDays);
+			totalDays++;
+			if(EmployeeAttendance()){
+				//totalDays++;
+				totalHrs+=isPartTime();
+				}
+			else{
+				System.out.println("employee is absent");
+			}
+		}
+		//System.out.println("Day#: " +totalDays);
+		int total= totalHrs*20;
+		return total;
+    	}
 }
